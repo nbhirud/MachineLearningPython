@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+
 # plt.style.use('./deeplearning.mplstyle')
 
 # x_train is the input variable (size in 1000 square feet)
@@ -18,20 +19,20 @@ print(f"Number of training examples is: {m}")
 m = len(x_train)
 print(f"Number of training examples is: {m}")
 
-i = 0 # Change this to 1 to see (x^1, y^1)
+i = 0  # Change this to 1 to see (x^1, y^1)
 
 x_i = x_train[i]
 y_i = y_train[i]
 print(f"(x^({i}), y^({i})) = ({x_i}, {y_i})")
 
 # Plot the data points
-plt.scatter(x_train, y_train, marker='x', c='r')
+plt.scatter(x_train, y_train, marker="x", c="r")
 # Set the title
 plt.title("Housing Prices")
 # Set the y-axis label
-plt.ylabel('Price (in 1000s of dollars)')
+plt.ylabel("Price (in 1000s of dollars)")
 # Set the x-axis label
-plt.xlabel('Size (1000 sqft)')
+plt.xlabel("Size (1000 sqft)")
 plt.show()
 
 # Play with these values
@@ -57,20 +58,25 @@ def compute_model_output(x, w, b):
 
     return f_wb
 
-tmp_f_wb = compute_model_output(x_train, w, b,)
+
+tmp_f_wb = compute_model_output(
+    x_train,
+    w,
+    b,
+)
 
 # Plot our model prediction
-plt.plot(x_train, tmp_f_wb, c='b',label='Our Prediction')
+plt.plot(x_train, tmp_f_wb, c="b", label="Our Prediction")
 
 # Plot the data points
-plt.scatter(x_train, y_train, marker='x', c='r',label='Actual Values')
+plt.scatter(x_train, y_train, marker="x", c="r", label="Actual Values")
 
 # Set the title
 plt.title("Housing Prices")
 # Set the y-axis label
-plt.ylabel('Price (in 1000s of dollars)')
+plt.ylabel("Price (in 1000s of dollars)")
 # Set the x-axis label
-plt.xlabel('Size (1000 sqft)')
+plt.xlabel("Size (1000 sqft)")
 plt.legend()
 plt.show()
 
